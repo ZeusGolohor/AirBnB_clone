@@ -91,7 +91,7 @@ class HBNBCommand(cmd.Cmd):
         """
         A method to exit the program.
         """
-        exit()
+        return (True)
 
     def help_quit(self):
         """
