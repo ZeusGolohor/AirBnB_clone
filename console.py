@@ -278,7 +278,7 @@ class HBNBCommand(cmd.Cmd):
         if (line[-3:] == "l()"):
             return (True)
         else:
-           print("*** Unknown syntax: {}".format(line))
+            print("*** Unknown syntax: {}".format(line))
 
     def User_all(self, line):
         """
@@ -295,6 +295,14 @@ class HBNBCommand(cmd.Cmd):
         """
         if (self.check_braks_all(line) is True):
             self.do_all("BaseModel")
+
+    def State_all(self, line):
+        """
+        A method used to handle the State.all() cmd
+        command used to print all state Instances.
+        """
+        if (self.check_braks_all(line) is True):
+            self.do_all("State")
 
     def User_count(self, line):
         """
@@ -314,6 +322,7 @@ class HBNBCommand(cmd.Cmd):
         dictOfMethods = {
             "User.all": self.User_all,
             "BaseModel.all": self.BaseModel_all,
+            "State.all": self.State_all,
             "User.count": self.User_count
         }
         try:
