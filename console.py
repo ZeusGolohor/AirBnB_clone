@@ -209,21 +209,22 @@ class HBNBCommand(cmd.Cmd):
             elif (len(allClassIns) == 0):
                 print("** no instance found **")
         else:
-            if (len(line1) > 1):
-                print("*** Unknown syntax: {}".format(line))
-                print("Usage: {}all {}".format(self.prompt, line1[0]))
-            elif (self.check_class(line) is True):
-                for key, value in objs.items():
-                    if (value["__class__"] == line1[0]):
-                        if (value["__class__"] in self.dictOfClasses.keys()):
-                            className = self.dictOfClasses[value["__class__"]]
-                            instance = className(**value)
-                            allClassIns.append(str(instance))
+            if (self.check_class(line) is True):
+                if (len(line1) > 1):
+                    print("*** Unknown syntax: {}".format(line))
+                    print("Usage: {}all {}".format(self.prompt, line1[0]))
+                else:
+                    for key, value in objs.items():
+                        if (value["__class__"] == line1[0]):
+                            if (value["__class__"] in self.dictOfClasses.keys()):
+                                className = self.dictOfClasses[value["__class__"]]
+                                instance = className(**value)
+                                allClassIns.append(str(instance))
 
-                if (len(allClassIns) > 0):
-                    print(allClassIns)
-                elif (len(allClassIns) == 0):
-                    print("** no instance found **")
+                    if (len(allClassIns) > 0):
+                        print(allClassIns)
+                    elif (len(allClassIns) == 0):
+                        print("** no instance found **")
 
     def help_all(self):
         """
