@@ -271,12 +271,30 @@ class HBNBCommand(cmd.Cmd):
         )
         print()
 
+    def check_braks_all(self, line):
+        """
+        A method to check for l().
+        """
+        if (line[-3:] == "l()"):
+            return (True)
+        else:
+           print("*** Unknown syntax: {}".format(line))
+
     def User_all(self, line):
         """
         A method used to handle the User.all() cmd command.
-        used to print all users.
+        used to print all users instances.
         """
-        self.do_all("User")
+        if (self.check_braks_all(line) is True):
+            self.do_all("User")
+
+    def BaseModel_all(self, line):
+        """
+        A method used to handle the BaseModel.all() cmd
+        command used to print all BaseModel Instances.
+        """
+        if (self.check_braks_all(line) is True):
+            self.do_all("BaseModel")
 
     def User_count(self, line):
         """
@@ -295,10 +313,11 @@ class HBNBCommand(cmd.Cmd):
         """
         dictOfMethods = {
             "User.all": self.User_all,
+            "BaseModel.all": self.BaseModel_all,
             "User.count": self.User_count
         }
         try:
-            ptn = "[A-Z]{1,1}[a-z]{0,}.[a-z]{1,}\("
+            ptn = "[A-Za-z]{1,}.[a-z]{1,}(.)"
             cmmd = re.match(ptn, line).group(0)
         except AttributeError:
             print("*** Unknown syntax: {}".format(line))
@@ -310,7 +329,7 @@ class HBNBCommand(cmd.Cmd):
                 try:
                     func = dictOfMethods[cmmd]
                 except KeyError:
-                    print("*** Unknown syntax: {}".format(line))
+                    print("** class doesn't exist **")
                 else:
                     func(line)
 
