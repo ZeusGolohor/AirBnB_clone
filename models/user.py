@@ -12,8 +12,6 @@ class User(BaseModel):
     """
     This class is used to handle a new User instance.
     """
-    __count = 0
-
     def __init__(self, *args, **kwagrs):
         """
         This method is called whenever this class is instantiated.
@@ -34,5 +32,3 @@ class User(BaseModel):
                     setattr(self, key, value)
         if ("id" not in kwagrs.keys()):
             storage.new(self)
-
-        self._User__count = self._User__count + 1

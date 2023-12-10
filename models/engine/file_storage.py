@@ -39,7 +39,11 @@ class FileStorage():
                 if (value["__class__"] in console.dictOfClasses.keys()):
                     className = console.dictOfClasses[value["__class__"]]
                     instance = className(**value)
-                    objs["{}.{}".format(value["__class__"], value["id"])] = str(instance)
+                    objs[
+                          "{}.{}".format(
+                                          value["__class__"],
+                                          value["id"])
+                         ] = str(instance)
         return (objs)
 
     def new(self, obj):

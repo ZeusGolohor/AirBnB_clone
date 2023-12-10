@@ -6,6 +6,7 @@ from models.base_model import BaseModel
 from models import storage
 from datetime import datetime
 
+
 class State(BaseModel):
     """
     This class is used to manage the State class

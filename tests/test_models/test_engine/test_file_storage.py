@@ -30,11 +30,10 @@ class TestFileStorage(unittest.TestCase):
         To check if a new instance exist in the file system
         objects.
         """
-        self.assertIn("{}.{}".format(
-                            self.base1.__class__.__name__,
-                            self.base1.id),
-                    storage._FileStorage__objects
-                    )
+        base1ClsName = self.base1.__class__.__name__
+        base1Id = self.base1.id
+        objs = storage.base1.id
+        self.assertIn("{}.{}".format(b1, b2), objs)
 
     @classmethod
     def tearDownClass(cls):
