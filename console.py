@@ -215,8 +215,13 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     for key, value in objs.items():
                         if (value["__class__"] == line1[0]):
-                            if (value["__class__"] in self.dictOfClasses.keys()):
-                                className = self.dictOfClasses[value["__class__"]]
+                            if (
+                                value
+                                    [
+                                        "__class__"
+                                    ] in self.dictOfClasses.keys()):
+                                clsName = value["__class__"]
+                                className = self.dictOfClasses[clsName]
                                 instance = className(**value)
                                 allClassIns.append(str(instance))
 
@@ -339,15 +344,97 @@ class HBNBCommand(cmd.Cmd):
         if (self.check_braks_all(line) is True):
             self.do_all("Review")
 
+    def check_braks_count(self, line):
+        """
+        A method to check for l().
+        """
+        if (line[-3:] == "t()"):
+            return (True)
+        else:
+            print("*** Unknown syntax: {}".format(line))
+
     def User_count(self, line):
         """
         A method to print total number of User instance(s).
         """
         ins = 0
-        store = storage._FileStorage__objects
-        for key, value in store.items():
-            if (value["__class__"] == "User"):
-                ins = ins + 1
+        if (self.check_braks_count(line) is True):
+            store = storage._FileStorage__objects
+            for key, value in store.items():
+                if (value["__class__"] == "User"):
+                    ins = ins + 1
+        print(ins)
+
+    def BaseModel_count(self, line):
+        """
+        A method to print total number of BaseModel instance(s).
+        """
+        ins = 0
+        if (self.check_braks_count(line) is True):
+            store = storage._FileStorage__objects
+            for key, value in store.items():
+                if (value["__class__"] == "BaseModel"):
+                    ins = ins + 1
+        print(ins)
+
+    def State_count(self, line):
+        """
+        A method to print total number of State instance(s).
+        """
+        ins = 0
+        if (self.check_braks_count(line) is True):
+            store = storage._FileStorage__objects
+            for key, value in store.items():
+                if (value["__class__"] == "State"):
+                    ins = ins + 1
+        print(ins)
+
+    def City_count(self, line):
+        """
+        A method to print total number of City instance(s).
+        """
+        ins = 0
+        if (self.check_braks_count(line) is True):
+            store = storage._FileStorage__objects
+            for key, value in store.items():
+                if (value["__class__"] == "City"):
+                    ins = ins + 1
+        print(ins)
+
+    def Amenity_count(self, line):
+        """
+        A method to print total number of Amenity instance(s).
+        """
+        ins = 0
+        if (self.check_braks_count(line) is True):
+            store = storage._FileStorage__objects
+            for key, value in store.items():
+                if (value["__class__"] == "Amenity"):
+                    ins = ins + 1
+        print(ins)
+
+    def Place_count(self, line):
+        """
+        A method to print total number of Place instance(s).
+        """
+        ins = 0
+        if (self.check_braks_count(line) is True):
+            store = storage._FileStorage__objects
+            for key, value in store.items():
+                if (value["__class__"] == "Place"):
+                    ins = ins + 1
+        print(ins)
+
+    def Review_count(self, line):
+        """
+        A method to print total number of Review instance(s).
+        """
+        ins = 0
+        if (self.check_braks_count(line) is True):
+            store = storage._FileStorage__objects
+            for key, value in store.items():
+                if (value["__class__"] == "Review"):
+                    ins = ins + 1
         print(ins)
 
     def default(self, line):
@@ -362,7 +449,13 @@ class HBNBCommand(cmd.Cmd):
             "Amenity.all": self.Amenity_all,
             "Place.all": self.Place_all,
             "Review.all": self.Review_all,
-            "User.count": self.User_count
+            "User.count": self.User_count,
+            "BaseModel.count": self.BaseModel_count,
+            "State.count": self.State_count,
+            "City.count": self.City_count,
+            "Amenity.count": self.Amenity_count,
+            "Place.count": self.Place_count,
+            "Review.count": self.Review_count,
         }
         try:
             ptn = "[A-Za-z]{1,}.[a-z]{1,}(.)"
