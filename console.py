@@ -307,6 +307,38 @@ class HBNBCommand(cmd.Cmd):
         if (self.check_braks_all(line) is True):
             self.do_all("State")
 
+    def City_all(self, line):
+        """
+        A method used to handle the City.all() cmd
+        command used to print all city Instances.
+        """
+        if (self.check_braks_all(line) is True):
+            self.do_all("City")
+
+    def Amenity_all(self, line):
+        """
+        A method used to handle the Amenity.all() cmd
+        command used to print all amenity Instances.
+        """
+        if (self.check_braks_all(line) is True):
+            self.do_all("Amenity")
+
+    def Place_all(self, line):
+        """
+        A method used to handle the Place.all() cmd
+        command used to print all place Instances.
+        """
+        if (self.check_braks_all(line) is True):
+            self.do_all("Place")
+
+    def Review_all(self, line):
+        """
+        A method used to handle the Review.all() cmd
+        command used to print all review Instances.
+        """
+        if (self.check_braks_all(line) is True):
+            self.do_all("Review")
+
     def User_count(self, line):
         """
         A method to print total number of User instance(s).
@@ -326,6 +358,10 @@ class HBNBCommand(cmd.Cmd):
             "User.all": self.User_all,
             "BaseModel.all": self.BaseModel_all,
             "State.all": self.State_all,
+            "City.all": self.City_all,
+            "Amenity.all": self.Amenity_all,
+            "Place.all": self.Place_all,
+            "Review.all": self.Review_all,
             "User.count": self.User_count
         }
         try:
