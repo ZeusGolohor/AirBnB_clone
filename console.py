@@ -217,9 +217,7 @@ class HBNBCommand(cmd.Cmd):
                             instance = className(**value)
                             allClassIns.append(str(instance))
 
-                if (len(line) > 1):
-                    print("*** Unknown syntax: {}".format(line))
-                elif (len(allClassIns) > 0):
+                if (len(allClassIns) > 0):
                     print(allClassIns)
                 elif (len(allClassIns) == 0):
                     print("** no instance found **")
