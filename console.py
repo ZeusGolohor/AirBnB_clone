@@ -211,7 +211,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             if (len(line1) > 1):
                 print("*** Unknown syntax: {}".format(line))
-                print("Usage: {}all {}".format(self.prompt), line1[0])
+                print("Usage: {}all {}".format(self.prompt, line1[0]))
             elif (self.check_class(line) is True):
                 for key, value in objs.items():
                     if (value["__class__"] == line1[0]):
