@@ -158,6 +158,7 @@ class HBNBCommand(cmd.Cmd):
             line = line.split()
             search_str = "{}.{}".format(line[0], line[1])
             del (storage._FileStorage__objects[search_str])
+            storage.save()
 
     def help_destroy(self):
         """
