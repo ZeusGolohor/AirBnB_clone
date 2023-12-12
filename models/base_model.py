@@ -12,6 +12,7 @@ class BaseModel():
     This class defines all common attributes/methods
     for other classes.
     """
+
     def __init__(self, *args, **kwargs):
         """
         A method called whenever this class gets instantiated.
@@ -22,6 +23,7 @@ class BaseModel():
             self.updated_at = datetime.now()
             storage.new(self)
         else:
+            kwagrs = eval(str(kwargs))
             for key, value in kwargs.items():
                 if key != "__class__":
                     if key == "created_at":
@@ -91,3 +93,23 @@ class BaseModel():
                         obj[key] = value
             obj["__class__"] = self.__class__.__name__
         return (obj)
+
+    def __eq__(self, comp):
+        """
+        A method used for instance comparism.
+        right here i compare thier dictionaries instead of
+        something else.
+        """
+        if (self.__dict__ == comp.__dict__):
+            return (True)
+        return (False)
+
+    def __nq__(self, comp):
+        """
+        A method used for instance comparism.
+        right here i compare thier dictionaries instead of
+        something else.
+        """
+        if (self.__dict__ == comp.__dict__):
+            return (True)
+        return (False)

@@ -43,7 +43,7 @@ class FileStorage():
                           "{}.{}".format(
                                           value["__class__"],
                                           value["id"])
-                         ] = str(instance)
+                         ] = instance
         return (objs)
 
     def new(self, obj):
@@ -76,6 +76,5 @@ class FileStorage():
             with open(self.__file_path, 'r') as objs:
                 objs_dict = json.load(objs)
                 self.__objects.update(objs_dict)
-
         except FileNotFoundError:
             pass
