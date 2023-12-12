@@ -59,6 +59,7 @@ class BaseModel():
         A method that updates the updated_at public instance
         variable to the current time.
         """
+        self.updated_at = datetime.now()
         storage.new(self)
         storage.save()
 
