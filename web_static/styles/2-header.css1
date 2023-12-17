@@ -1,0 +1,22 @@
+/* This file contains file for the header tag */
+header {
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+header section {
+    float: left;
+}
+
+header .logo {
+    height: 70px;
+    width: 250px;
+    background-image: url("../images/65f4a1dd9c51265f49d0.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-left: -32px;
+    margin-right: 20px;
+}

@@ -1,0 +1,9 @@
+/* css file containing  global style (i.e. the body style) */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.text-center {
+    text-align: center;
+}
