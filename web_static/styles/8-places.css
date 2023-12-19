@@ -88,4 +88,59 @@ article.article {
     text-align: left;
 }
 
+.max_guest {
+    float: left;
+    line-height: 1px;
+}
+
+.max_guest_img {
+    background-image: url("../images/icon_group.png");
+    background-repeat: no-repeat;
+    height: 44px;
+    width: 100px;
+    background-position: center;
+    background-size: contain;
+    margin-top: 6px;
+}
+
+.number_rooms {
+    float: left;
+    line-height: 1px;
+}
+
+.number_rooms p {
+    margin-top: 63px;
+}
+
+.number_rooms_img {
+    float: left;
+    background-image: url("../images/icon_bed.png");
+    background-repeat: no-repeat;
+    height: 44px;
+    width: 100px;
+    background-position: center;
+    background-size: contain;
+    margin-top: 6px;
+}
+
+.number_bathrooms {
+    float: left;
+    line-height: 1px;
+}
+
+.number_bathrooms p {
+    margin-top: 63px;
+}
+
+.number_bathrooms_img {
+    float: left;
+    background-image: url("../images/icon_bath.png");
+    background-repeat: no-repeat;
+    height: 44px;
+    width: 100px;
+    background-position: center;
+    background-size: contain;
+    margin-top: 6px;
+}
+
 

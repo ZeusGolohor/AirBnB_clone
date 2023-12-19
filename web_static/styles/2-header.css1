@@ -13,7 +13,7 @@ header section {
 header .logo {
     height: 70px;
     width: 250px;
-    background-image: url("../images/65f4a1dd9c51265f49d0.png");
+    background-image: url("../images/logo.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
