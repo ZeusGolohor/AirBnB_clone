@@ -1,0 +1,91 @@
+/* This file holds css for the place section */
+/* clearfix */
+.group:before,
+.group:after {
+    content: "";
+    display: table;
+}
+
+.group:after {
+    clear: both;
+}
+
+.group {
+    clear: both;
+    *zoom: 1;
+}
+
+.places {
+    z-index: 1;
+    text-align: center;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.places {
+    z-index: 1;
+    text-align: center;
+}
+
+
+
+.places h1 {
+    font-size: 30px;
+    width: 100%;
+    text-align: left;
+    margin-bottom: -20px;
+}
+
+.places h2 {
+    font-size: 30px;
+}
+
+article.article {
+    display: inline-block;
+    width: 390px;
+    padding: 20px;
+    margin: 20px;
+    border:  #FF5A5F solid 1px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.price_by_night {
+    color:  #FF5A5F;
+    border: #FF5A5F solid 4px;
+    min-width: 60px;
+    height: 60px;
+    font-size: 30px;
+    float: right;
+    border-radius: 55px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 63px;
+    padding-top: 28px;
+    margin-top: -83px;
+}
+
+.place_names {
+    width: 80%;
+}
+
+.information {
+    height: 80px;
+    border-top: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+    margin-top: 54px;
+}
+
+.user,
+.description {
+    width: 100%;
+    text-align: left;
+}
+
+

@@ -1,15 +1,10 @@
 /* This file holds css for the place section */
-.places {
-    z-index: 1;
-    text-align: center;
-}
-
-
 
 .places h1 {
     font-size: 30px;
     width: 100%;
     text-align: left;
+    margin-bottom: -20px;
 }
 
 .places h2 {
