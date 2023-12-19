@@ -22,6 +22,8 @@
     border-right: #DDDDDD solid 1px;
     text-align: left;
     height: 100%;
+    z-index: 10;
+    position: relative;
 }
 
 .filters div.amenities {
@@ -124,7 +126,9 @@ section .lists {
 }
 
 .new_list {
+    position: relative;
     margin-bottom: 35px;
+    z-index: 2;
 }
 
 .new_list li {
