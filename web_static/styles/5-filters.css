@@ -33,9 +33,9 @@ button:hover {
 }
 
 .filters div.locations {
-    display: inline-block !important;
+    display: inline-block;
     height: 100%;
-    width: 25% !important;
+    width: 25%;
     border-right: #DDDDDD solid 1px;
     text-align: left;
 }

@@ -17,6 +17,6 @@ header .logo {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-    margin-left: -32px;
-    margin-right: 20px;
+    margin-left: 20px;
+    /* margin-right: 20px; */
 }
