@@ -30,7 +30,7 @@
     display: inline-block;
     width: 25%;
     text-align: left;
-    position: fixed;
+    position: absolute;
 }
 
 
